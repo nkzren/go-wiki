@@ -8,4 +8,4 @@ start:
 	@docker run --rm -p 8080:8080 ${REPO_NAME}
 
 dev:
-	@docker run --rm -p 8080:8080 -ti --entrypoint=bash ${REPO_NAME}
+	@docker run -v ${PWD}/content:/opt/wiki/content --rm -p 8080:8080 -ti --entrypoint=bash ${REPO_NAME}
