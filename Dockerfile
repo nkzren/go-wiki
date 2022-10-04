@@ -1,8 +1,8 @@
 FROM golang:1.19 AS builder
 
 WORKDIR /opt/builder
-ADD wiki.go ./
-RUN ["go", "build", "wiki.go"]
+ADD ./src ./src
+RUN go build ./src/wiki.go
 
 FROM ubuntu:jammy AS app
 WORKDIR /opt/wiki
