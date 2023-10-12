@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -19,7 +18,6 @@ type Page struct {
 }
 
 func (p *Page) save() error {
-	fmt.Println("banana")
 	filename := "content/" + p.Title + ".txt"
 	return os.WriteFile(filename, p.Body, 0600)
 }
